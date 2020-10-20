@@ -10,6 +10,9 @@ namespace TestMaximum
             int maxInteger = MaximumInteger(20, 10, 40);
             Console.WriteLine("Maximum Integer Output: " + maxInteger);
 
+            double maxDouble = MaximumFloat(20.22, 3.058, 80.5);
+            Console.WriteLine("Maximum Double Output : " + maxDouble);
+
         }
 
         // UC 1
@@ -24,5 +27,16 @@ namespace TestMaximum
             return 0;
         }
 
+        // UC 2
+        public static double MaximumFloat(double a, double b, double c)
+        {
+            if (a.CompareTo(b) > 0 && a.CompareTo(c) > 0)
+                return a;
+            if (b.CompareTo(a) > 0 && b.CompareTo(c) > 0)
+                return b;
+            if (c.CompareTo(a) > 0 && c.CompareTo(b) > 0)
+                return c;
+            return 0;
+        }
     }
 }
