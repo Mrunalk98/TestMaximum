@@ -6,28 +6,23 @@ namespace TestMaximum
 {
     public class GenericMaximum <T> where T: IComparable
     {
-        public T first, second, third;
-        public GenericMaximum(T first, T second, T third)
+        private T[] array;
+        public GenericMaximum(T[] array)
         {
-            this.first = first;
-            this.second = second;
-            this.third = third;
-        }
-        public T GetMaximumValue(T a, T b, T c)
-        {
-            if (a.CompareTo(b) > 0 && a.CompareTo(c) > 0)
-                return a;
-            if (b.CompareTo(a) > 0 && b.CompareTo(c) > 0)
-                return b;
-            if (c.CompareTo(a) > 0 && c.CompareTo(b) > 0)
-                return c;
-            return default;
+            this.array = array;
         }
 
-        public T MaxValue()
+        public T[] SortValues(T[] array)
         {
-            T maxVal = GetMaximumValue(this.first, this.second, this.third);
-            return maxVal;
+            Array.Sort(array);
+            Array.Reverse(array);
+            return array;
         }
+        public T GetMaximumValue()
+        {
+            var sortedValues = SortValues(this.array);
+            return sortedValues[0];
+        }
+
     }
 }
