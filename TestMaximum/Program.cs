@@ -9,14 +9,14 @@ namespace TestMaximum
             Console.WriteLine("Welcome to Test Maximum Program !");
 
             
-            int maxInteger = new GenericMaximum<int>().MaximumValue(20, 40, 10);
+            int maxInteger = new GenericMaximum<int>(20, 40, 10).MaxValue();
             Console.WriteLine("Maximum Integer Output: " + maxInteger);
 
-            double maxDouble = new GenericMaximum<double>().MaximumValue(20.22, 3.058, 80.5);
+            double maxDouble = new GenericMaximum<double>(20.22, 3.058, 80.5).MaxValue();
             Console.WriteLine("Maximum Double Output : " + maxDouble);
 
 
-            string maxString = new GenericMaximum<string>().MaximumValue("Apple", "Peach", "Banana");
+            string maxString = new GenericMaximum<string>("Apple", "Peach", "Banana").MaxValue();
             Console.WriteLine("Maximum String Output : " + maxString);
         }
     }
