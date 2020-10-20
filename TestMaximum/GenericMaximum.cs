@@ -18,11 +18,16 @@ namespace TestMaximum
             Array.Reverse(array);
             return array;
         }
-        public T GetMaximumValue()
+        public T GetMaximumValue(T[] array)
         {
-            var sortedValues = SortValues(this.array);
+            var sortedValues = SortValues(array);
             return sortedValues[0];
         }
 
+        public void PrintMax()
+        {
+            var maxVal = GetMaximumValue(this.array);
+            Console.WriteLine("Maximum Value : " + maxVal);
+        }
     }
 }
