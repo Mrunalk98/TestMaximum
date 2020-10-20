@@ -13,6 +13,9 @@ namespace TestMaximum
             double maxDouble = MaximumFloat(20.22, 3.058, 80.5);
             Console.WriteLine("Maximum Double Output : " + maxDouble);
 
+
+            string maxString = MaximumString("Apple", "Peach", "Banana");
+            Console.WriteLine("Maximum String Output : " + maxString);
         }
 
         // UC 1
@@ -37,6 +40,18 @@ namespace TestMaximum
             if (c.CompareTo(a) > 0 && c.CompareTo(b) > 0)
                 return c;
             return 0;
+        }
+
+        // UC 3
+        public static string MaximumString(string a, string b, string c)
+        {
+            if (a.CompareTo(b) > 0 && a.CompareTo(c) > 0)
+                return a;
+            if (b.CompareTo(a) > 0 && b.CompareTo(c) > 0)
+                return b;
+            if (c.CompareTo(a) > 0 && c.CompareTo(b) > 0)
+                return c;
+            return null;
         }
     }
 }
